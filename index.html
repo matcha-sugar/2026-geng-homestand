@@ -318,8 +318,8 @@ footer b{color:var(--ink);font-family:var(--display);font-stretch:118%;font-weig
       <div class="step-head"><span class="step-num">03</span><h3>Schedule <span class="req">*</span></h3></div>
       <p style="font-size:13px;color:var(--grey);margin-bottom:14px">참석하실 일자를 선택해주세요. (복수 선택 가능)</p>
       <div class="att" id="f-days">
-        <label class="pill"><input type="checkbox" name="day" value="DAY 1"><span>Day 1 · Jul 31 (Fri) — Gen.G vs T1<small>17:00 · KINTEX HALL 5</small></span></label>
-        <label class="pill"><input type="checkbox" name="day" value="DAY 2"><span>Day 2 · Aug 1 (Sat) — Gen.G vs Dplus Kia<small>19:00 전후 · KINTEX HALL 5</small></span></label>
+        <label class="pill"><input type="checkbox" name="day" value="7/31(금)"><span>Day 1 · Jul 31 (Fri) — Gen.G vs T1<small>17:00 · KINTEX HALL 5</small></span></label>
+        <label class="pill"><input type="checkbox" name="day" value="8/1(토)"><span>Day 2 · Aug 1 (Sat) — Gen.G vs Dplus Kia<small>19:00 전후 · KINTEX HALL 5</small></span></label>
       </div>
     </div>
 
@@ -352,7 +352,7 @@ footer b{color:var(--ink);font-family:var(--display);font-stretch:118%;font-weig
 
 <script>
 // ✅ Google Apps Script 연동 — APPS_SCRIPT_URL을 실제 배포 URL로 교체하세요.
-const APPS_SCRIPT_URL = 'https://script.google.com/a/macros/ksv.gg/s/AKfycbzP3M7WlYM08WBZ_RXG89xNuj6xNqNcgBAYqchKH6gsrZhwJciDZ-1raunHQtFN4inWDw/exec';
+const APPS_SCRIPT_URL = 'https://script.google.com/a/macros/ksv.gg/s/AKfycbwTlRPB2WDLVkE9UgsBTpCtuRzOXUIRu8n3FSDK60dkY7v9YYwnu1c7jLli6ii-XkE9ew/exec';
 
 async function saveRSVP(data){
   const params = new URLSearchParams({
@@ -395,9 +395,8 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
     const done = document.getElementById('done');
     done.style.display='block';
     document.getElementById('done-msg').textContent =
-      org + ' ' + name + '님, 참석 확인이 완료되었습니다. 상세 안내는 ' + email + ' 로 발송됩니다.';
-    document.getElementById('done-code').textContent =
-      'Gen.G · Partner VIP · ' + days.join(' + ');
+      org + ' ' + name + '님, 참석 확인이 완료되었습니다. ' + days.join(', ') + '에 인사 드리겠습니다.';
+    document.getElementById('done-code').textContent = 'THANK YOU';
     done.scrollIntoView({behavior:'smooth'});
   }catch(e){
     err.textContent='제출 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.';
