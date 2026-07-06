@@ -358,6 +358,7 @@ async function saveRSVP(data){
   const params = new URLSearchParams({
     name:  data.name,
     org:   data.org,
+    email: data.email,
     phone: data.phone,
     size:  data.size,
     days:  data.days.join(', '),
